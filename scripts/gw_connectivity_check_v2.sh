@@ -1,13 +1,13 @@
 #!/bin/sh
 # ============================================================
-# Centegix Gateway Connectivity Check — v2 (Zach's annotated build)
-# Based on the eng team's diagnostic script. All original checks kept;
+# Gateway Connectivity Check — v2 (Zach's annotated build)
+# All original checks kept;
 # additions are tagged [NEW]. Everything here is READ-ONLY — no step
 # modifies the gateway. BusyBox/ash-safe (no bashisms).
 #
 # What v2 adds over v1:
-#   - DNS is actually tested (resolv.conf + nslookup) — the haiku is earned now
-#   - TCP + TLS test to the real CENTEGIX endpoint, not just ICMP pings
+#   - DNS is actually tested (resolv.conf + nslookup)
+#   - TCP + TLS test to the real endpoint, not just ICMP pings
 #   - Default-route check: shows WHICH WAN (Ethernet vs cellular) owns traffic
 #   - Clock sanity check (a wrong clock silently kills every TLS handshake)
 #   - Timeouts on everything so no step can hang the session
