@@ -1,17 +1,7 @@
 #!/bin/sh
 # ============================================================
-# Gateway Connectivity Check — v2 (Zach's annotated build)
-# All original checks kept;
-# additions are tagged [NEW]. Everything here is READ-ONLY — no step
-# modifies the gateway. BusyBox/ash-safe (no bashisms).
-#
-# What v2 adds over v1:
-#   - DNS is actually tested (resolv.conf + nslookup)
-#   - TCP + TLS test to the real endpoint, not just ICMP pings
-#   - Default-route check: shows WHICH WAN (Ethernet vs cellular) owns traffic
-#   - Clock sanity check (a wrong clock silently kills every TLS handshake)
-#   - Timeouts on everything so no step can hang the session
-#
+# Gateway Connectivity Check v1
+
 # Usage: sh gw_connectivity_check_v2.sh [interface]   (default: eth0.2)
 # ============================================================
 
@@ -19,7 +9,7 @@ IFACE="${1:-eth0.2}"
 TARGET="app.centegix.com"
 
 echo ""
-echo "===== Centegix Gateway Connectivity Check v2 ($IFACE) ====="
+echo "===== Centegix Gateway Connectivity Check v1 ($IFACE) ====="
 echo "Running on $(uname -n 2>/dev/null) at $(date)"
 
 # ---- 1. Link state (Layer 1/2) ----
