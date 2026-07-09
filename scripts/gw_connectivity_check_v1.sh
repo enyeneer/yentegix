@@ -2,7 +2,7 @@
 # ============================================================
 # Gateway Connectivity Check v1
 
-# Usage: sh gw_connectivity_check_v2.sh [interface]   (default: eth0.2)
+# Usage: sh gw_connectivity_check_v1.sh [interface]   (default: eth0.2)
 # ============================================================
 
 IFACE="${1:-eth0.2}"
